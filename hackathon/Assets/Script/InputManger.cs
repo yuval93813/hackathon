@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class inputManager : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
-    private PlayerInput playerinput;
-    private PlayerInput.onFootAction onFoot;
+    private PlayerInput playerInput;
+    private PlayerInput.OnFootActions onFoot;
 
     private PlayerMotor motor;
      
     // Start is called before the first frame update
     void Awake()
     {
-        playerinput = new PlayerInput();
-        onFoot = playerinput.onFoot;
-        motor = GetComponent<PlayerInput>();
+        playerInput = new PlayerInput();
+        onFoot = playerInput.OnFoot;
+        motor = GetComponent<PlayerMotor>();
     }
-   
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>;
+        motor.ProcessMove(onFoot.)
     }
     private void OnEnable()
     {

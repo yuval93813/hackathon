@@ -14,17 +14,17 @@ public class PlayerMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller= GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        isGrounded = controller.isGrounded;
     }
-    public void ProcessMove(Vector2,Input)
+    public void ProcessMove(Vector2 Input)
     {
-        Vector3 move.Direction = Vector3.zero;
+        Vector3 moveDirection = Vector3.zero;
         MoveDirection.x = Input.x;
         MoveDirection.z = Input.y;
         controller.Move(transform.TransformDirection(MoveDirection) * speed * Time.deltaTime);
