@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour
     }
     void FixedUpdate()
     {
-        motor.ProcessMove(onFoot.)
+        motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
     }
     private void OnEnable()
     {
