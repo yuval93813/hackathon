@@ -9,6 +9,7 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 playerVelocity;
     public float speed = 5f;
     public float gravity = -9.8f;
+    private bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class PlayerMotor : MonoBehaviour
         MoveDirection.z = Input.y;
         controller.Move(transform.TransformDirection(MoveDirection) * speed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;
+        if(isGrounded && playerVelocity.y< 0) 
+        {
+            playerVelocity.y = -2f;
+        }
         controller.Move(playerVelocity * Time.deltaTime);
     }
 }
